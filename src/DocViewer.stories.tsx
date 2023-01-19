@@ -23,7 +23,6 @@ export const Default = () => {
         noRenderer: {
           overrideComponent: ({ document, fileName }) => {
             const fileText = fileName || document?.fileType || "";
-            console.log(document);
             if (fileText) {
               return <div>no renderer for {fileText}</div>;
             }
@@ -68,6 +67,7 @@ export const WithPDFInput = () => {
         documents={selectedDocs.map((file) => ({
           uri: window.URL.createObjectURL(file),
           fileName: file.name,
+          file: file,
         }))}
         pluginRenderers={DocViewerRenderers}
       />

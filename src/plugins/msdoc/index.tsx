@@ -10,7 +10,7 @@ const MSDocRenderer: DocRenderer = ({ mainState: { currentDocument } }) => {
       <IFrame
         id="msdoc-iframe"
         title="msdoc-iframe"
-        src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
+        src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(
           currentDocument.uri
         )}`}
         frameBorder="0"
